@@ -1,0 +1,62 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam shadowing false
+hide empty members
+
+package creational {
+  package fabricmethod {
+
+    class Main {
+      + main(args: String[])
+    }
+
+    class Logistics {
+      # createTransport(): Transport
+      + planDelivery()
+    }
+
+    class LandLogistics {
+      # createTransport(): Transport
+    }
+
+    class SeaLogistics {
+      # createTransport(): Transport
+    }
+
+    class SkyLogistics {
+      # createTransport(): Transport
+    }
+
+    class Transport {
+      # deliver()
+    }
+
+    class Plane {
+      # deliver()
+    }
+
+    class Ship {
+      # deliver()
+    }
+
+    class Truck {
+      # deliver()
+    }
+
+    Main --> Logistics : main() -> planDelivery()
+
+    Logistics <|-- LandLogistics
+    Logistics <|-- SeaLogistics
+    Logistics <|-- SkyLogistics
+
+    Logistics --> Transport : planDelivery() -> deliver()
+
+    Transport <|-- Plane
+    Transport <|-- Ship
+    Transport <|-- Truck
+  }
+}
+
+@enduml

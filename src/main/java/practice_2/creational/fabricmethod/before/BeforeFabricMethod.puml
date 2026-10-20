@@ -1,0 +1,42 @@
+@startuml
+
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+hide empty members
+
+package creational {
+  package fabricmethod {
+
+    class Main {
+      {static} + main(args: String[])
+    }
+
+    abstract class Transport {
+      {abstract} ~ deliver(): void
+    }
+
+    class Plane {
+      ~ deliver(): void
+    }
+
+    class Ship {
+      ~ deliver(): void
+    }
+
+    class Truck {
+      ~ deliver(): void
+    }
+
+    Main -down-> Transport : main() -> deliver()
+
+    Transport <|-- Plane
+    Transport <|-- Ship
+    Transport <|-- Truck
+
+    Plane -[hidden]right-> Ship
+    Ship -[hidden]right-> Truck
+  }
+}
+
+@enduml

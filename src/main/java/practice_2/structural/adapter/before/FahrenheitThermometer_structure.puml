@@ -1,0 +1,21 @@
+@startuml
+
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam roundcorner 0
+skinparam defaultFontName "Times New Roman"
+skinparam packageFontStyle plain
+
+hide circle
+hide empty members
+
+package structural {
+  package adapter {
+
+    class "(C)FahrenheitThermometer" as FahrenheitThermometer
+
+  }
+}
+
+@enduml

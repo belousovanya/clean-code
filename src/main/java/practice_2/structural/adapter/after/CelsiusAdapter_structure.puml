@@ -1,0 +1,26 @@
+@startuml
+
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam roundcorner 0
+skinparam defaultFontName "Times New Roman"
+skinparam packageFontStyle plain
+
+hide circle
+hide empty members
+
+package structural {
+  package adapter {
+
+    class "(C)CelsuisAdapter" as CelsuisAdapter {
+      - fahrenheitThermometer: FahrenheitThermometer
+    }
+
+    class "(C)FahrenheitThermometer" as FahrenheitThermometer
+
+    CelsuisAdapter -down-> "0..1" FahrenheitThermometer : fahrenheitThermometer
+  }
+}
+
+@enduml

@@ -1,0 +1,47 @@
+@startuml
+
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam roundcorner 0
+skinparam defaultFontName "Times New Roman"
+skinparam packageFontStyle plain
+
+hide circle
+hide empty members
+
+package creational {
+  package abstractfabric {
+
+    class "(C)Main" as Main {
+      {static} + main(args: String[])
+    }
+
+    class "(C)MacOSButton" as MacOSButton {
+      + paint()
+    }
+
+    class "(C)MacOSCheckbox" as MacOSCheckbox {
+      + paint()
+    }
+
+    class "(C)WindowsButton" as WindowsButton {
+      + paint()
+    }
+
+    class "(C)WindowsCheckbox" as WindowsCheckbox {
+      + paint()
+    }
+
+    Main -down-> MacOSButton : paint()
+    Main -down-> MacOSCheckbox : paint()
+    Main -down-> WindowsButton : paint()
+    Main -down-> WindowsCheckbox : paint()
+
+    MacOSButton -[hidden]right-> MacOSCheckbox
+    MacOSCheckbox -[hidden]right-> WindowsButton
+    WindowsButton -[hidden]right-> WindowsCheckbox
+  }
+}
+
+@enduml

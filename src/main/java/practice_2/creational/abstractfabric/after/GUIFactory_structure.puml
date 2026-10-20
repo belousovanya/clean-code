@@ -1,0 +1,38 @@
+@startuml
+
+skinparam packageStyle rectangle
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam roundcorner 0
+skinparam defaultFontName "Times New Roman"
+skinparam packageFontStyle plain
+
+hide circle
+hide empty members
+
+package creational {
+  package abstractfabric {
+
+    interface "(I)GUIFactory" as GUIFactory {
+      + createButton(): Button
+      + createCheckbox(): Checkbox
+    }
+
+    class "(C)MacOsFactory" as MacOsFactory {
+      + createButton(): Button
+      + createCheckbox(): Checkbox
+    }
+
+    class "(C)WindowsFactory" as WindowsFactory {
+      + createButton(): Button
+      + createCheckbox(): Checkbox
+    }
+
+    GUIFactory <|.. MacOsFactory
+    GUIFactory <|.. WindowsFactory
+
+    MacOsFactory -[hidden]right-> WindowsFactory
+  }
+}
+
+@enduml
