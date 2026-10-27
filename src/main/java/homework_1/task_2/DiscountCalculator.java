@@ -30,17 +30,15 @@ public class DiscountCalculator {
 
     // с KISS
     public static double calculateDiscount(double price, boolean isLoyalCustomer, boolean isFirstPurchase, boolean hasCoupon) {
-        double discount;
-
         if (isLoyalCustomer && isFirstPurchase) {
-            discount = price * 0.10;
-        } else if (isLoyalCustomer) {
-            discount = price * 0.05;
-        } else if (hasCoupon) {
-            discount = price * 0.07;
-        } else {
-            discount = price * 0.02;
+            return price - price * 0.10;
         }
-        return price - discount;
+        if (isLoyalCustomer) {
+            return price - price * 0.05;
+        }
+        if (hasCoupon) {
+            return price - price * 0.07;
+        }
+        return price - price * 0.02;
     }
 }

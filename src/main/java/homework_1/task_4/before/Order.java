@@ -1,4 +1,4 @@
-package homework_1.task_4;
+package homework_1.task_4.before;
 
 public class Order {
     // до SRP
