@@ -1,8 +1,7 @@
 package homework_2.task_9;
 
-public class PDFProcessor implements DocumentProcessor {
-    @Override
-    public void process() {
+public class PDFProcessor {
+    public void processPdf() {
         System.out.println("Работаем с PDF");
     }
 }

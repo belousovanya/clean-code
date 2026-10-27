@@ -1,7 +1,7 @@
 package homework_2.task_10;
 
 public class MilesToKilometersAdapter implements Distance {
-    private Miles miles;
+    private final Miles miles;
 
     public MilesToKilometersAdapter(Miles miles) {
         this.miles = miles;

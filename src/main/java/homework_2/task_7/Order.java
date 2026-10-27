@@ -5,13 +5,7 @@ public class Order {
     private int sale;
     private String paymentMethod;
 
-    public Order(String item, int sale, String paymentMethod) {
-        this.item = item;
-        this.sale = sale;
-        this.paymentMethod = paymentMethod;
-    }
-
-    public Order(OrderBuilder orderBuilder) {
+    private Order(OrderBuilder orderBuilder) {
         this.item = orderBuilder.item;
         this.sale = orderBuilder.sale;
         this.paymentMethod = orderBuilder.paymentMethod;

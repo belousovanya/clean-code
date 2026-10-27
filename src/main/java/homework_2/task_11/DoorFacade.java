@@ -1,9 +1,9 @@
 package homework_2.task_11;
 
 public class DoorFacade {
-    private DoorOpen openDoor;
-    private DoorClose closeDoor;
-    private DoorLock lockDoor;
+    private final DoorOpen openDoor;
+    private final DoorClose closeDoor;
+    private final DoorLock lockDoor;
 
     public DoorFacade(DoorOpen openDoor, DoorClose closeDoor, DoorLock lockDoor) {
         this.openDoor = openDoor;

@@ -6,7 +6,7 @@ public class Logger {
     private Logger() {
     }
 
-    public static Logger getInstance() {
+    public static synchronized Logger getInstance() {
         if (logger == null) {
             logger = new Logger();
         }

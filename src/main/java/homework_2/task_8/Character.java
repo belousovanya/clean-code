@@ -6,14 +6,7 @@ public class Character {
     private String armor;
     private String magicalAbility;
 
-    public Character(String health, String damage, String armor, String magicalAbility) {
-        this.health = health;
-        this.damage = damage;
-        this.armor = armor;
-        this.magicalAbility = magicalAbility;
-    }
-
-    public Character(CharacterBuilder characterBuilder) {
+    private Character(CharacterBuilder characterBuilder) {
         this.health = characterBuilder.health;
         this.damage = characterBuilder.damage;
         this.armor = characterBuilder.armor;

@@ -16,7 +16,7 @@ public class ConfigurationManager {
     }
 
     // создание единственного экземпляра ConfigurationManager
-    public static ConfigurationManager getInstance() {
+    public static synchronized ConfigurationManager getInstance() {
         if (configurationManager == null) {
             configurationManager = new ConfigurationManager();
         }
